@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Marker Clustering</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       #map-container {
+         padding: 6px;
+         border-width: 1px;
+         border-style: solid;
+         border-color: #ccc #ccc #999 #ccc;
+         -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+         -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
+         box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
+         width: 375px;
+       }
+       #map {
+         width: 375px;
+         height: 667px;
+       }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map-container" style="float: left;">
+      <div id="map"></div>
+    </div>
+    <script src="./js/main.js"></script>
+    <script src="./data.json"></script>
+    <script src="./js/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?v=3.30&key=AIzaSyAgjbGzADDD5M1I8lS5qc3DAQkydAkzYVQ&callback=initMap">
+    </script>
+  </body>
+</html>

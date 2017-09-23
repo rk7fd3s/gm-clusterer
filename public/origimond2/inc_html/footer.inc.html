@@ -1,0 +1,45 @@
+	<footer>
+		<div class="footerWrap">
+			
+			<h3 class="footerLogo"><img src="/origimond/images/footerLogo.svg" alt="Origimond" width="123" height="20"></h3>
+			<p class="footerEng">This information retrieval web site<br>
+			is help to connecting with you and a piece of real estate,<br>
+			which is single family home, condominium unit or landownership.</p>
+
+			<h4>売り出し中の物件を探す</h4>
+			<p class="footerSearch"><a href="/origimond/map/">MAPから</a><span>│</span><a href="/origimond/train/">沿線・駅から</a><span>│</span><a href="/origimond/area/">現在地周辺から</a></p>
+			
+			<ul class="legalList">
+				<li><a href="/origimond/mypage/">マイページ</a></li>
+				<li><a href="/origimond/mypage/accountNew.html">会員登録</a></li>
+				<li><a href="/origimond/contact/">お問い合わせ</a></li>
+				<li><a href="/origimond/mypage/">ログイン</a></li>
+			</ul>
+
+		</div>
+		<small>Copyright &copy; ORIGIMOND<br>Daiko Sangyo Co., ltd.  All Rights Reserved.</small>
+		
+	</footer>	
+	
+</div><!-- END: .wrap -->
+
+<!-- ここからTOPに戻るボタン 20150727 -->
+<p class="page-top"><a href="#headerContain"><img src="/origimond/images/toTheTop.svg" alt="TOPに戻る" width="30" height="30"></a></p>
+<!-- トップに戻るボタン 20150727 -->
+<script type="text/javascript">
+jQuery.event.add(window, "load", function(){ 
+  var pagetop = $('.page-top');
+    $(window).scroll(function () {
+       if ($(this).scrollTop() > 500) {
+            pagetop.fadeIn();
+       } else {
+            pagetop.fadeOut();
+            }
+       });
+       pagetop.click(function () {
+           $('body, html').animate({ scrollTop: 0 }, 1000);
+              return false;
+   });
+});
+</script>
+<!-- ここまでTOPに戻るボタン -->

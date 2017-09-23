@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=320">
+<title>ORIGIMOND</title>
+
+<meta name="description" itemprop="description" content="">
+<meta name="keywords" itemprop="keywords" content="">
+
+<link rel="stylesheet" href="/origimond/css/style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- BEGIN: OGP -->
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="fb:admins" content="">
+<meta property="fb:app_id" content="">
+<!-- END: OGP -->
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<script src="//ie7-js.googlecode.com/svn/trunk/lib/ie7-squish.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="/favicon.ico" type="/origimond/image/vnd.microsoft.icon" />
+
+<!-- BEGIN: Popup Search -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script>
+$( function() {
+	$('.popupSearchWrap').css('display', 'none');
+	$('.popupSearchBtn, .popupSearchCloseBtn').click( function() {
+		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
+	});
+});
+function submitFreeword(){
+	if(window.event.keyCode==13){
+		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
+		document.fFreeword.submit();
+	}
+}
+</script>
+<!-- END: Popup Search -->
+
+<!-- BEGIN: Google Analytics Code -->
+<!-- END: Google Analytics Code -->
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+<?php include "../help/helpC.html"; ?>
+
+<?php include "../inc_html/header.inc.html"; ?>
+					
+	<section class="contactWrap"><!-- CONTACT -->	
+
+		<div class="contactArea">
+			<h3 class="h3Contact">CONTACT</h3>
+
+			<form action="index_submit" method="get" accept-charset="utf-8">
+				<p class="contactInput"><input type="search" name="free" id="search-field" value="" placeholder="お名前" class="input-field"></p>
+				<p class="contactInput"><input type="search" name="free" id="search-field" value="" placeholder="e-mail" class="input-field"></p>
+				<p class="contactInput"><textarea placeholder="コメント" class="contactText"></textarea></p>
+				<p class="contactBtn"><a href="/origimond/agent/agentContactThanks.html" title="">メッセージを送る</a></p>
+				</div>
+			</form>
+
+		</div>
+
+	</section><!-- END: CONTACT -->
+
+</div>
+<?php include "../inc_html/footer.inc.html"; ?>
+
+<!-- BEGIN: animatedModal -->
+<link rel="stylesheet" href="/origimond/css/animate.min.css">
+<script src="/origimond/js/animatedModal.min.js"></script>
+<script type="text/javascript">
+	$("#modal").animatedModal({
+	        modalTarget:'helpModal',
+	        animatedIn:'bounceInUp',
+	        animatedOut:'bounceOutDown',
+	        color:'#555',
+	        animationDuration: '.6s',
+	        overflow: 'auto'
+	});
+</script>
+
+</body>
+</html>

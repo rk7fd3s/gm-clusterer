@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=320">
+<title>ORIGIMOND</title>
+
+<meta name="description" itemprop="description" content="">
+<meta name="keywords" itemprop="keywords" content="">
+
+<link rel="stylesheet" href="/origimond/css/style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- BEGIN: OGP -->
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="fb:admins" content="">
+<meta property="fb:app_id" content="">
+<!-- END: OGP -->
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<script src="//ie7-js.googlecode.com/svn/trunk/lib/ie7-squish.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="/favicon.ico" type="/origimond/image/vnd.microsoft.icon" />
+
+<!-- BEGIN: Popup Search -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script>
+$( function() {
+	$('.popupSearchWrap').css('display', 'none');
+	$('.popupSearchBtn, .popupSearchCloseBtn').click( function() {
+		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
+	});
+});
+function submitFreeword(){
+	if(window.event.keyCode==13){
+		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
+		document.fFreeword.submit();
+	}
+}
+</script>
+<!-- END: Popup Search -->
+
+<!-- BEGIN: Google Analytics Code -->
+<!-- END: Google Analytics Code -->
+
+</head>
+
+<body>
+
+
+
+<div class="wrap">
+
+	<section class="accountWrap" id=""><!-- アカウント新規登録 -->	
+
+		<h2 class="mypageH2"><img src="/origimond/images/accountLogo.svg" alt="origimond" width="159" height="26"></h2>
+
+		<h3 class="fbText mt50">物件情報を閲覧するには<br>アカウントの登録が必要です</h3>
+
+		<p class="accountTxt">ここから先の物件情報を閲覧いただく際は、<br>アカウントをご登録の上<br>ログインしてご覧ください。</p>
+
+		<div class="accountBtnArea textCenter">
+			<p class="accountLoginBtn"><a href="/origimond/mypage/accountNew.html" title="">アカウント新規登録</a></p>
+			<p class="mt30">すでにアカウントをお持ちの方</p>
+			<p class="accountLoginBtn"><a href="/origimond/mypage/" title="">ログイン</a></p>
+		</div>
+
+
+
+	</section><!-- END: アカウント新規登録 -->
+
+</div>
+
+	<footer>
+		<small class="mt50 textCenter">Copyright &copy; ORIGIMOND Daiko Sangyo Co., ltd.</small>
+	</footer>	
+
+</body>
+</html>
+
+
+
+

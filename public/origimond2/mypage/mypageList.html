@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=320">
+<title>ORIGIMOND</title>
+
+<meta name="description" itemprop="description" content="">
+<meta name="keywords" itemprop="keywords" content="">
+
+<link rel="stylesheet" href="/origimond/css/style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- BEGIN: OGP -->
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="fb:admins" content="">
+<meta property="fb:app_id" content="">
+<!-- END: OGP -->
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<script src="//ie7-js.googlecode.com/svn/trunk/lib/ie7-squish.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="/favicon.ico" type="/origimond/image/vnd.microsoft.icon" />
+
+<!-- BEGIN: Popup Search -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script>
+$( function() {
+	$('.popupSearchWrap').css('display', 'none');
+	$('.popupSearchBtn, .popupSearchCloseBtn').click( function() {
+		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
+	});
+});
+function submitFreeword(){
+	if(window.event.keyCode==13){
+		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
+		document.fFreeword.submit();
+	}
+}
+</script>
+<!-- END: Popup Search -->
+
+<!-- BEGIN: Google Analytics Code -->
+<!-- END: Google Analytics Code -->
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+<?php include "../help/helpD.html"; ?>
+
+<?php include "../inc_html/header.inc.html"; ?>
+
+	<h2 class="mypageListH2">マイページ<span><a href="/origimond/mypage/mypageAccount.html" title="アカウントページ"><img src="/origimond/images/accountIcon.svg" alt="編集" width="26px" height="26px"></a></span></h2>
+
+
+
+	<!-- TAB CONTROLLERS -->
+	<input id="panel-1-ctrl" class="panel-radios" type="radio" name="tab-radios" checked>
+	<input id="panel-2-ctrl" class="panel-radios" type="radio" name="tab-radios">
+	<input id="panel-3-ctrl" class="panel-radios" type="radio" name="tab-radios">
+
+	<!-- TABS LIST -->
+	<ul id="tabs-list">
+	    <!-- MENU TOGGLE -->
+	    <li id="li-for-panel-1">
+	      <label class="panel-label" for="panel-1-ctrl">&#9829;</label>
+	    </li>
+	    <li id="li-for-panel-2">
+	      <label class="panel-label" for="panel-2-ctrl">閲覧</label>
+	    </li>
+	    <li id="li-for-panel-3">
+	      <label class="panel-label" for="panel-3-ctrl">お問い合わせ</label>
+	    </li>
+	</ul>
+
+	<!-- THE PANELS -->
+	<article id="panels">
+	  <div class="container">
+	    <section id="panel-1">
+	      <main>
+			<div class="mypageListArea">
+				<p class="mypageKensuu">お気に入り 123件</p>
+				<p class="mypageListBtns">
+					<a href="/origimond/mypage/mypageListEdit.html" title="" class="mr10">
+						<img src="/origimond/images/mypageListCheck.svg" alt="編集" width="17px" height="17px">
+					</a> 
+					<a href="/origimond/mypage/mypageSearch.html" title="">
+						<img src="/origimond/images/listRefine_btn.svg" alt="検索" width="20px" height="17px">
+					</a>
+				</p>
+			</div>
+			<div class="mypageListImages">
+				<p class="detailImg"><img src="/origimond/images/mypageListImg.jpg" width="100%" height="100%" alt="お気に入り物件リスト"></p>
+			</div>
+			<div class="mypageListPager">
+				<p class="listPager">1 / 3<span class="listPagerarrow"><a href="" title="">&gt;</a></span></p>
+			</div>
+	      </main>
+	    </section>
+	    <section id="panel-2">
+	      <main>
+			<div class="mypageListArea">
+				<p class="mypageKensuu">最近閲覧した物件</p>
+				<p class="mypageListBtns"><a href="/origimond/mypage/mypageListEdit.html" title="" class="mr10"><img src="/origimond/images/mypageListOkini.svg" alt="編集" width="17px" height="17px"></a> <a href="/origimond/mypage/mypageSearch.html" title=""><img src="/origimond/images/listRefine_btn.svg" alt="検索" width="20px" height="17px"></a></p>
+			</div>
+			<div class="mypageListImages">
+				<p class="detailImg"><img src="/origimond/images/mypageListImg.jpg" width="100%" height="100%" alt="お気に入り物件リスト"></p>
+			</div>
+	      </main>
+	    </section>
+	    <section id="panel-3">
+	      <main>
+			<div class="mypageListArea">
+				<p class="mypageKensuu">問い合わせした物件 123件</p>
+				<p class="mypageListBtns"><a href="/origimond/mypage/mypageSearch.html" title=""><img src="/origimond/images/listRefine_btn.svg" alt="検索" width="20px" height="17px"></a></p>
+			</div>
+			<div class="mypageListImages">
+				<p class="detailImg"><img src="/origimond/images/mypageContactListImg.jpg" width="100%" height="100%" alt="お気に入り物件リスト"></p>
+			</div>
+	      </main>
+	    </section>
+	  </div>
+	</article>
+
+</div>
+<?php include "../inc_html/footer.inc.html"; ?>
+
+<!-- BEGIN: animatedModal -->
+<link rel="stylesheet" href="/origimond/css/animate.min.css">
+<script src="/origimond/js/animatedModal.min.js"></script>
+<script type="text/javascript">
+	$("#modal").animatedModal({
+	        modalTarget:'helpModal',
+	        animatedIn:'bounceInUp',
+	        animatedOut:'bounceOutDown',
+	        color:'#555',
+	        animationDuration: '.6s',
+	        overflow: 'auto'
+	});
+</script>
+
+</body>
+</html>

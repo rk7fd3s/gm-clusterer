@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=320">
+<title>ORIGIMOND</title>
+
+<meta name="description" itemprop="description" content="">
+<meta name="keywords" itemprop="keywords" content="">
+
+<link rel="stylesheet" href="/origimond/css/style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- BEGIN: OGP -->
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="fb:admins" content="">
+<meta property="fb:app_id" content="">
+<!-- END: OGP -->
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<script src="//ie7-js.googlecode.com/svn/trunk/lib/ie7-squish.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="/favicon.ico" type="/origimond/image/vnd.microsoft.icon" />
+
+<!-- BEGIN: Popup Search -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script>
+$( function() {
+	$('.popupSearchWrap').css('display', 'none');
+	$('.popupSearchBtn, .popupSearchCloseBtn').click( function() {
+		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
+	});
+});
+function submitFreeword(){
+	if(window.event.keyCode==13){
+		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
+		document.fFreeword.submit();
+	}
+}
+</script>
+<!-- END: Popup Search -->
+
+<!-- BEGIN: Google Analytics Code -->
+<!-- END: Google Analytics Code -->
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+<?php include "../help/helpC.html"; ?>
+
+<?php include "../inc_html/header.inc.html"; ?>
+
+	<div class="listTitleArea">
+		<p class="listArrow"><img src="/origimond/images/listArrow.svg" alt="LIST" width="59px" height="11px"></p>
+		<p class="listBtns">
+			<a href="/origimond/list/list_search.html" title="" class="mr10"><img src="/origimond/images/listRefine_btn.svg" alt="検索" width="20px" height="17px"></a>
+			<label for="Panel1"><img src="/origimond/images/listSort_btn.svg" alt="並び替え" width="20px" height="17px"></label>
+		</p>
+	</div>
+
+	<div class="menu">
+	    <input type="checkbox" id="Panel1" class="on-off" />
+	    <ul>
+	        <li><a href="">新着順</a></li>
+	        <li><a href="">人気順</a></li>
+	        <li><a href="">価格が安い順</a></li>
+	        <li><a href="">価格が高い順</a></li>
+	        <li><a href="">面積が広い順</a></li>
+	        <li><a href="">面積が狭い順</a></li>
+	        <li><a href="">部屋数が多い順</a></li>
+	        <li><a href="">部屋数が少ない順</a></li>
+	        <li><a href="">駅バス停が近い順</a></li>
+	        <li><a href="">駅バス停が遠い順</a></li>
+	    </ul>
+	</div>
+
+	<section class="listWrap"><!-- 1物件 -->
+		
+		<p class="imgArea"><a href="/origimond/detail/" title=""><img src="/origimond/images/listImg_01.jpg" alt="リスト画像01" width="100%" height="100%"></a></p>
+
+<!--		<ul class="listIconBtns">
+			<li><a href="" title=""><img src="/origimond/images/heart_on.svg" alt="お気に入り" width="25px" height="25px"></a></li>
+			<li><a href="/origimond/train/" title=""><img src="/origimond/images/tatemono_on.svg" alt="建物" width="25px" height="25px"></a></li>
+		</ul>
+-->
+		<ul class="listTexts">
+				<li class="listPrice">¥39,450,000</li>
+				<li class="listTitle">グランドカーサ大名</li>
+				<li>80.12㎡ │ 築5年 │ 福岡市中央区大名1</li>
+				<li>西鉄天神大牟田線「福岡（天神）駅」歩10分</li>
+		</ul>	
+
+	</section><!-- END: .listWrap -->
+
+	<section class="listWrap"><!-- 1物件 -->
+		
+		<p class="imgArea"><a href="/origimond/detail/" title=""><img src="/origimond/images/listImg_02.jpg" alt="リスト画像02" width="100%" height="100%"></a></p>
+
+		<ul class="listTexts">
+				<li class="listPrice">¥45,670,000</li>
+				<li class="listTitle">ロイヤルパレス大名</li>
+				<li>100.89㎡ │ 新築 │ 福岡市中央区大名2</li>
+				<li>西鉄天神大牟田線「福岡（天神）駅」歩12分</li>
+		</ul>	
+
+	</section><!-- END: .listWrap -->
+
+</div>
+
+<!-- BEGIN: animatedModal -->
+<link rel="stylesheet" href="/origimond/css/animate.min.css">
+<script src="/origimond/js/animatedModal.min.js"></script>
+<script type="text/javascript">
+	$("#modal").animatedModal({
+	        modalTarget:'helpModal',
+	        animatedIn:'bounceInUp',
+	        animatedOut:'bounceOutDown',
+	        color:'#555',
+	        animationDuration: '.6s',
+	        overflow: 'auto'
+	});
+</script>
+
+</body>
+</html>

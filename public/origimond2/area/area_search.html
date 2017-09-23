@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=320">
+<title>ORIGIMOND</title>
+
+<meta name="description" itemprop="description" content="">
+<meta name="keywords" itemprop="keywords" content="">
+
+<link rel="stylesheet" href="/origimond/css/style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- BEGIN: OGP -->
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="fb:admins" content="">
+<meta property="fb:app_id" content="">
+<!-- END: OGP -->
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<script src="//ie7-js.googlecode.com/svn/trunk/lib/ie7-squish.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="/favicon.ico" type="/origimond/image/vnd.microsoft.icon" />
+
+<!-- BEGIN: Popup Search -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script>
+$( function() {
+	$('.popupSearchWrap').css('display', 'none');
+	$('.popupSearchBtn, .popupSearchCloseBtn').click( function() {
+		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
+	});
+});
+function submitFreeword(){
+	if(window.event.keyCode==13){
+		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
+		document.fFreeword.submit();
+	}
+}
+</script>
+<!-- END: Popup Search -->
+
+<!-- BEGIN: Google Analytics Code -->
+<!-- END: Google Analytics Code -->
+
+<!-- footer固定とスムースリンク -->
+<script>
+	$(function() {
+	   // #で始まるアンカーをクリックした場合に処理
+	   $('a[href^="#"]').click(function() {
+	      // スクロールの移動速度
+	      var speed = 400; // ミリ秒
+	      // アンカーの値取得
+	      var href= $(this).attr("href");
+	      // 移動先を取得
+	      var target = $(href == "#" || href == "" ? 'html' : href);
+	      // 移動先を数値で取得
+	      var position = target.offset().top;
+	      // スムーススクロール
+	      $('body,html').animate({scrollTop:position}, speed, 'swing');
+	      return false;
+	   });
+	});
+</script>
+
+<script>
+	$(function() {
+	    var topMenu = $('.footBtnArea');    
+	    topMenu.hide();
+	    $(this).scroll(function () {
+	        if ($(this).scrollTop() > 160) {
+	            topMenu.fadeIn();
+	        } else {
+	            topMenu.fadeOut();
+	        }
+	    });
+	});
+</script>
+
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+<?php include "../help/helpB.html"; ?>
+
+<?php include "../inc_html/header.inc.html"; ?>
+					
+	<div class="shiboriTitleArea">
+		<p class="taglinePra">物件を絞り込む<span class="demoSpan2"><a href="/origimond/list/" title=""></a></span></p>
+
+	</div>
+
+	<section class="searchlWrap"><!-- INFO -->	
+		<form action="index_submit" method="get" accept-charset="utf-8">
+		<table class="infoTable" width="100%">
+			<tbody>
+				<tr>
+					<td><span class="subTh">物件価格</span><br>
+						<div class="select-wrap">
+							<select name="" id="">
+								<option value="">下限なし</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select> 〜 
+							<select name="" id="">
+								<option value="">上限なし</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select>	
+						</div>
+
+						<div class="radio02">
+							<label>
+								<input type="radio" name="radio01" class="radio01-input">
+								<span class="radio01-parts">価格未定の物件を含める</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">物件ジャンル</span><br>
+						<div class="radio02">
+							<label>
+								<input type="checkbox" name="radio01" class="radio01-input">
+								<span class="radio01-parts">新築戸建て</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio02" class="radio01-input">
+								<span class="radio01-parts">中古戸建て</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio03" class="radio01-input">
+								<span class="radio01-parts">新築マンション</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio04" class="radio01-input">
+								<span class="radio01-parts">中古マンション</span>
+							</label>
+						</div>
+						<div class="radio02 tLine">
+							<label>
+								<input type="checkbox" name="radio01" class="radio01-input">
+								<span class="radio01-parts">リノベーション・リフォーム済み戸建て</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio02" class="radio01-input">
+								<span class="radio01-parts">リノベーション・リフォーム済みマンション</span>
+							</label><br>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">フリーワード</span><br>
+						<div class="select-wrap">
+							<input type="search" name="free" id="search-field" value="" placeholder="駅名・市区町村・条件など" class="input-field">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">土地面積</span><br>
+						<div class="select-wrap">
+							<select name="" id="">
+								<option value="">下限なし</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select> 〜 
+							<select name="" id="">
+								<option value="">上限なし</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select>					
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">建物（占有）面積</span><br>
+						<div class="select-wrap">
+							<select name="" id="">
+								<option value="">下限なし</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select> 〜 
+							<select name="" id="">
+								<option value="">上限なし</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select>					
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">間取り</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio05" class="radio01-input">
+										<span class="radio01-parts">1K/DK/LDK</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio06" class="radio01-input">
+										<span class="radio01-parts">2K/DK/LDK</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio07" class="radio01-input">
+										<span class="radio01-parts">3K/DK/LDK</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio08" class="radio01-input">
+										<span class="radio01-parts">4K/DK/LDK</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio09" class="radio01-input">
+										<span class="radio01-parts">5K～</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">目的駅からの時間</span><br>
+						<span class="subTd">通勤・通学先の最寄り駅</span>
+						<div class="select-wrap">
+							<input type="search" name="free" id="search-field" value="" placeholder="駅名を入力" class="input-fieldHalf"><span class="inputRight">駅から</span>
+						</div><br>
+						<span class="subTd">乗車時間</span>
+						<div class="select-wrap">
+							<select name="" id="" class="selectW">
+								<option value="">乗車時間を選択する</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">駅からの徒歩分数</span><br>
+						<div class="select-wrap">
+							<select name="" id="">
+								<option value="">指定なし</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select>
+						</div>
+						<div class="radio02">
+							<label>
+								<input type="checkbox" name="radio01" class="radio01-input">
+								<span class="radio01-parts">バス停からの徒歩分数を含む</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">駅の利便性</span><br>
+						<div class="radio02">
+							<label>
+								<input type="checkbox" name="radio10" class="radio01-input">
+								<span class="radio01-parts">2沿線以上利用可</span>
+							</label>
+							<label>
+								<input type="checkbox" name="radio11" class="radio01-input">
+								<span class="radio01-parts">始発駅</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">駅の利便性</span><br>
+						<div class="radio02">
+							<label>
+								<input type="checkbox" name="radio12" class="radio01-input">
+								<span class="radio01-parts">2沿線以上利用可</span>
+							</label>
+							<label>
+								<input type="checkbox" name="radio13" class="radio01-input">
+								<span class="radio01-parts">始発駅</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">条件付き土地</span><br>
+						<div class="radio02">
+							<label>
+								<input type="checkbox" name="radio14" class="radio01-input">
+								<span class="radio01-parts">建築条件付き土地も含めて検索</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">権利</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio15" class="radio01-input">
+										<span class="radio01-parts">所有権</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio16" class="radio01-input">
+										<span class="radio01-parts">賃借権・地上権</span>
+									</label><br>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio17" class="radio01-input">
+										<span class="radio01-parts">定期借地権</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">入居時期</span><br>
+						<div class="select-wrap">
+							<select name="" id="">
+								<option value="">指定なし</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">総戸数</span><br>
+						<div class="select-wrap">
+							<select name="" id="">
+								<option value="">指定なし</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">階数</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">2階建て</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio19" class="radio01-input">
+										<span class="radio01-parts">3階建て以上</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">情報公開日</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">本日</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio19" class="radio01-input">
+										<span class="radio01-parts">3日以内</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio20" class="radio01-input">
+										<span class="radio01-parts">7日以内</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">表示情報</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">360°パノラマ付</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio19" class="radio01-input">
+										<span class="radio01-parts">物件ムービー付</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">住宅性能</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio05" class="radio01-input">
+										<span class="radio01-parts">長期優良住宅</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio06" class="radio01-input">
+										<span class="radio01-parts">制震・免震・耐震</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio07" class="radio01-input">
+										<span class="radio01-parts">低炭素住宅</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio08" class="radio01-input">
+										<span class="radio01-parts">太陽光発電システム</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio09" class="radio01-input">
+										<span class="radio01-parts">オール電化</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio09" class="radio01-input">
+										<span class="radio01-parts">省エネ給湯器</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">資金面の優遇</span><br>
+						<div class="radio02">
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">長期優良住宅の税制優遇あり</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">低炭素住宅の税制優遇あり</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">フラット35・S適合（金利引き下げあり）</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">証明書類</span><br>
+						<div class="radio02">
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">住宅性能評価書あり</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">日当たり</span><br>
+						<div class="radio02">
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">南向き</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">間取りの広さ</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">LDK15畳以上</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">全居室6畳以上</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">室内設備・仕様</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">床暖房</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">バリアフリー</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">2世帯住宅</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">収納</span><br>
+						<div class="radio02">
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">全居室収納</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">シューズインクローク</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">ウォークインクローゼット</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">キッチン関連設備</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">システムキッチン</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">対面式キッチン</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">パントリー</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">IH</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">食器洗濯乾燥機</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">都市ガス</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">浴室</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">浴室乾燥機</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">浴室1坪以上</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">バルコニー・テラス・庭</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">ウッドテラス</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">ルーフバルコニー</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">南面バルコニー</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">南庭</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">庭10坪以上</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">駐車場</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">駐車2台可</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">駐車3台以上可</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">ハイルーフ駐車場</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">立地・土地</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">高台に立地</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">角地</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">整形地</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">低層住居専用地域</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">周辺環境</span><br>
+						<div class="radio02">
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">隣の建物との間隔広め</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">スーパーが徒歩10分圏内</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">総合病院が徒歩10分圏内</span>
+							</label><br>
+							<label>
+								<input type="checkbox" name="radio18" class="radio01-input">
+								<span class="radio01-parts">小学校が徒歩10分圏内</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">その他</span><br>
+						<div class="radio02">
+							<ul class="halfUl">
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">セキュリティ充実</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">売主・代理</span>
+									</label>
+								</li>
+								<li>
+									<label>
+										<input type="checkbox" name="radio18" class="radio01-input">
+										<span class="radio01-parts">ペット可能</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><span class="subTh">並び替え条件</span><br>
+						<div class="select-wrap">
+							<select name="" id="">
+								<option value="">指定なし</option>
+								<option value="">0000</option>
+								<option value="">0000</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+
+		<div class="accountBtnArea mt30">
+			<p class="tourokuBtn"><a href="/origimond/area/" title="">選択条件で絞り込む</a></p>
+			<p class="jokenClear"><a href="/origimond/list/list_search.html" title="">選択条件をクリア</a></p>
+		</div>
+
+	</section><!-- END: INFO -->
+
+	<div class="footSearch footBtnArea pb50">
+		<p class="jokenClearMini"><a href="/origimond/area/area_search.html" title="">クリア</a></p>
+		<p class="tourokuBtnMini"><a href="/origimond/area/" title="">選択条件で絞り込む</a></p>
+	</div>
+
+</div>
+
+<!-- BEGIN: animatedModal -->
+<link rel="stylesheet" href="/origimond/css/animate.min.css">
+<script src="/origimond/js/animatedModal.min.js"></script>
+<script type="text/javascript">
+	$("#modal").animatedModal({
+	        modalTarget:'helpModal',
+	        animatedIn:'bounceInUp',
+	        animatedOut:'bounceOutDown',
+	        color:'#555',
+	        animationDuration: '.6s',
+	        overflow: 'auto'
+	});
+</script>
+
+</body>
+</html>
+

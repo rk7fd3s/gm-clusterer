@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=320">
+<title>ORIGIMOND</title>
+
+<meta name="description" itemprop="description" content="">
+<meta name="keywords" itemprop="keywords" content="">
+
+<link rel="stylesheet" href="/origimond/css/style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- BEGIN: OGP -->
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="fb:admins" content="">
+<meta property="fb:app_id" content="">
+<!-- END: OGP -->
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<script src="//ie7-js.googlecode.com/svn/trunk/lib/ie7-squish.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="/favicon.ico" type="/origimond/image/vnd.microsoft.icon" />
+
+<!-- BEGIN: Popup Search -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script>
+$( function() {
+	$('.popupSearchWrap').css('display', 'none');
+	$('.popupSearchBtn, .popupSearchCloseBtn').click( function() {
+		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
+	});
+});
+function submitFreeword(){
+	if(window.event.keyCode==13){
+		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
+		document.fFreeword.submit();
+	}
+}
+</script>
+<!-- END: Popup Search -->
+
+<!-- BEGIN: Google Analytics Code -->
+<!-- END: Google Analytics Code -->
+
+</head>
+
+<body>
+
+
+
+<div class="wrap">
+
+<?php include "../help/helpA.html"; ?>
+
+<?php include "../inc_html/header.inc.html"; ?>
+
+	<div class="titleArea">
+		<p class="taglinePra">MAP から探す</p>
+	</div>
+			
+	<section class="areaSearchWrap">
+		
+		<p class="backBtn"><a href="/origimond/train/train_kyushu.html" title=""><img src="/origimond/images/back_arrow.svg" alt="戻る" width="24px" height="24px"></a></p>
+
+		<p class="mapArea"><a href="/origimond/train/train_fukuoka2.html" title=""><img src="/origimond/images/train_fukuoka1.jpg" alt="福岡エリアの地図" width="100%" height="100%"></a></p>
+
+		<ul class="iconBtns">
+			<li><a href="" title=""><img src="/origimond/images/search_btn.svg" alt="検索" width="40px" height="40px"></a></li>
+			<li><a href="/origimond/map/" title=""><img src="/origimond/images/map_btn.svg" alt="MAPから探す" width="40px" height="40px"></a></li>
+			<li><a href="/origimond/area/" title=""><img src="/origimond/images/area_btn.svg" alt="現在地周辺を探す" width="40px" height="40px"></a></li>
+		</ul>
+
+	</section><!-- END: .featureWrap -->
+
+</div>
+
+<!-- BEGIN: animatedModal -->
+<link rel="stylesheet" href="/origimond/css/animate.min.css">
+<script src="/origimond/js/animatedModal.min.js"></script>
+<script type="text/javascript">
+	$("#modal").animatedModal({
+	        modalTarget:'helpModal',
+	        animatedIn:'bounceInUp',
+	        animatedOut:'bounceOutDown',
+	        color:'#555',
+	        animationDuration: '.6s',
+	        overflow: 'auto'
+	});
+</script>
+
+</body>
+</html>

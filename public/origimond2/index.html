@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=320">
+<title>ORIGIMOND</title>
+
+<meta name="description" itemprop="description" content="">
+<meta name="keywords" itemprop="keywords" content="">
+
+<link rel="stylesheet" href="css/style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- BEGIN: OGP -->
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="fb:admins" content="">
+<meta property="fb:app_id" content="">
+<!-- END: OGP -->
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<script src="//ie7-js.googlecode.com/svn/trunk/lib/ie7-squish.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="/favicon.ico" type="image/vnd.microsoft.icon" />
+
+<!-- BEGIN: Popup Search -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script>
+$( function() {
+	$('.popupSearchWrap').css('display', 'none');
+	$('.popupSearchBtn, .popupSearchCloseBtn').click( function() {
+		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
+	});
+});
+</script>
+<!-- END: Popup Search -->
+
+<!-- BEGIN: Google Analytics Code -->
+<!-- END: Google Analytics Code -->
+
+</head>
+
+<body>
+
+
+
+<div class="wrap">
+
+<?php include "./help/helpA.html"; ?>
+
+<?php include "./inc_html/header.inc.html"; ?>
+
+	<div class="topSearch">
+		<p class="taglinePra">売り物件 SERCH</p>
+		<p class="topSearchBtnArea"><input type="search" name="free" id="search-field" value="" placeholder="駅・市区郡・物件名を入力" class="search-field"><a href="/origimond/list/" title="searchBtn" class="topSearchBtn"><img src="images/searchBtn.svg" alt="searchBtn" width="30" height="30"></a></p>
+	</div>
+		
+	<div class="gSearchWrap">
+		<nav class="gSearch">
+			<ul class="gSearchList">
+				<li><a href="/origimond/map/" title="MAPから探す">MAPから探す</a></li>
+				<li><a href="/origimond/train/" title="沿線・駅から探す">沿線・駅から探す</a></li>
+				<li><a href="/origimond/area/area_price.html" title="現在地周辺を探す">現在地周辺を探す</a></li>
+			</ul>
+		</nav>
+	</div><!-- END: .gSearchWrap -->
+	
+	
+	
+	<section class="aboutWrap">
+		
+		<h2 class="aboutH2"><img src="images/aboutOrigimond.svg" alt="about Origimond" width="108" height="83"></h2>
+		<h3 class="aboutH3">ABOUT</h3>
+		<p class="borderWide"><img src="images/aboutBar.svg" alt="" width="15" height="2"></p>
+		<p class="aboutCatch">戸建・マンション・土地など<br>
+		売り物件とあなたをつなぐ情報検索サイト<br>
+		〈 オリジモンド 〉</p>		
+		<p class="aboutTxt">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。<br>テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</p>		
+
+	</section><!-- END: .featureWrap -->
+
+<?php include "./inc_html/footer.inc.html"; ?>
+
+</div>
+
+
+<!-- BEGIN: animatedModal -->
+<link rel="stylesheet" href="css/animate.min.css">
+<script src="js/animatedModal.min.js"></script>
+<script type="text/javascript">
+	$("#modal").animatedModal({
+	        modalTarget:'helpModal',
+	        animatedIn:'bounceInUp',
+	        animatedOut:'bounceOutDown',
+	        color:'#555',
+	        animationDuration: '.6s',
+	        overflow: 'auto'
+	});
+</script>
+
+</body>
+</html>
+
+
+
+

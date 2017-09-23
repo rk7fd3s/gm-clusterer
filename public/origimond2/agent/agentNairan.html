@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=320">
+<title>ORIGIMOND</title>
+
+<meta name="description" itemprop="description" content="">
+<meta name="keywords" itemprop="keywords" content="">
+
+<link rel="stylesheet" href="/origimond/css/style.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- BEGIN: OGP -->
+<meta property="og:title" content="">
+<meta property="og:type" content="website">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="">
+<meta property="fb:admins" content="">
+<meta property="fb:app_id" content="">
+<!-- END: OGP -->
+
+<!--[if lt IE 9]>
+<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<script src="//ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<script src="//ie7-js.googlecode.com/svn/trunk/lib/ie7-squish.js"></script>
+<![endif]-->
+
+<link rel="shortcut icon" href="/favicon.ico" type="/origimond/image/vnd.microsoft.icon" />
+
+<!-- BEGIN: Popup Search -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script>
+$( function() {
+	$('.popupSearchWrap').css('display', 'none');
+	$('.popupSearchBtn, .popupSearchCloseBtn').click( function() {
+		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
+	});
+});
+function submitFreeword(){
+	if(window.event.keyCode==13){
+		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
+		document.fFreeword.submit();
+	}
+}
+</script>
+<!-- END: Popup Search -->
+<script type="text/javascript" src="/origimond/js/iscroll.js"></script>
+<script>
+	$(document).ready(function () {
+	 
+	    var element = $(".scroll_x")[0];
+	 
+	    var scroll_x = new iScroll(element, {
+	 
+	        // スクロールバーを常時表示
+	        hideScrollbar: false,
+	 
+	        // 慣性スクロール禁止
+	        bounce: false,
+	 
+	        // スクロール領域からの画面全体の縦スクロールを有効に
+	        onBeforeScrollStart: function(){}
+	 
+	    });
+	 
+	});
+</script>
+<!-- BEGIN: Google Analytics Code -->
+<!-- END: Google Analytics Code -->
+
+</head>
+
+<body>
+
+<div class="wrap">
+
+<?php include "../help/helpC.html"; ?>
+
+<?php include "../inc_html/header.inc.html"; ?>
+					
+	<p class="imgArea"><img src="/origimond/images/listImg_01.jpg" alt="リスト画像01" width="100%" height="100%"></p>
+
+	<section class="detailWrap">
+		
+		<ul class="detailList">
+			<li class="listPrice">¥39,450,000</li>
+			<li class="listTitle">グランドカーサ大名</li>
+			<li>80.12㎡ │ 築5年 │ 福岡市中央区大名1</li>
+			<li>西鉄天神大牟田線「福岡（天神）駅」歩10分</li>
+		</ul>	
+
+	</section>
+	<section class="agentNairanSelect">
+		
+		<p class="nairanTxt">内覧を希望する日時を選択してください</p>
+
+		<div class="nairanDay scroll_box scroll_x">
+			<form action="agentNairan_submit" method="get" accept-charset="utf-8">
+				<input type="radio" name="fruits" value="1" id="20170926">
+				<label for="20170926"><span class="nairanMonth">9月</span><br>26<br><span class="nairanWday">MON</span></label>
+				<input type="radio" name="fruits" value="2" id="20170927">
+				<label for="20170927"><span class="nairanMonth">9月</span><br>27<br><span class="nairanWday">TUE</span></label>
+				<input type="radio" name="fruits" value="3" id="20170928">
+				<label for="20170928"><span class="nairanMonth">9月</span><br>28<br><span class="nairanWday">WED</span></label>
+				<input type="radio" name="fruits" value="4" id="20170929">
+				<label for="20170929"><span class="nairanMonth">9月</span><br>29<br><span class="nairanWday">THU</span></label>
+				<input type="radio" name="fruits" value="5" id="20170930">
+				<label for="20170930"><span class="nairanMonth">9月</span><br>30<br><span class="nairanWday">FRI</span></label>
+			</form>
+		</div>
+
+		<div class="nairanDay scroll_box scroll_x">
+			<form action="agentNairan_submit" method="get" accept-charset="utf-8">
+				<input type="radio" name="fruits" value="1" id="0900">
+				<label for="0900"><span class="nairanTime">9：00〜</span></label>
+				<input type="radio" name="fruits" value="1" id="0930">
+				<label for="0930"><span class="nairanTime">9：30〜</span></label>
+				<input type="radio" name="fruits" value="1" id="1000">
+				<label for="1000"><span class="nairanTime">10：00〜</span></label>
+				<input type="radio" name="fruits" value="1" id="1030">
+				<label for="1030"><span class="nairanTime">10：30〜</span></label>
+				<input type="radio" name="fruits" value="1" id="1100">
+				<label for="1100"><span class="nairanTime">11：00〜</span></label>
+			</form>
+		</div>
+
+
+		<p class="nairanTxt2">この物件を取り扱えるエージェントへ選択した内覧希望の<br>日時が送られ、後日案内のメールが届きます。</p>
+
+		<p class="agentValueBtn mt20"><a href="/origimond/agent/agentNairanThanks.html" title="">内覧希望日時を送信</a></p>
+
+	</section>
+
+
+
+
+
+</div>
+<?php include "../inc_html/footer.inc.html"; ?>
+
+<!-- BEGIN: animatedModal -->
+<link rel="stylesheet" href="/origimond/css/animate.min.css">
+<script src="/origimond/js/animatedModal.min.js"></script>
+<script type="text/javascript">
+	$("#modal").animatedModal({
+	        modalTarget:'helpModal',
+	        animatedIn:'bounceInUp',
+	        animatedOut:'bounceOutDown',
+	        color:'#555',
+	        animationDuration: '.6s',
+	        overflow: 'auto'
+	});
+</script>
+
+</body>
+</html>
+

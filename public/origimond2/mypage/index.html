@@ -10,6 +10,8 @@
 
 <link rel="stylesheet" href="/origimond/css/style.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+<script src="/origimond/js/authenticationChk.js"></script>
 
 <!-- BEGIN: OGP -->
 <meta property="og:title" content="">
@@ -42,27 +44,6 @@ $( function() {
 </script>
 <!-- END: Popup Search -->
 
-<!-- BEGIN: slider-pro -->
-<link rel="stylesheet" type="text/css" href="/origimond/css/slider-pro.css">
-<script type="text/javascript" src="/origimond/js/jquery.sliderPro.min.js"></script>
-
-<script type="text/javascript">
-$( document ).ready(function( $ ) {
-$( '#slider-pro' ).sliderPro({
-		buttons: true, //スライダーのページャを表示する
-		startSlide: 0, //最初のスライドを指定する
-		arrows: false, //左右の矢印ボタンを表示する
-		width: '100%', //横幅を設定する
-		height: 400, //高さを設定する
-		autoplay: true, //自動再生の設定
-		loop: true, //スライドをループさせる設定
-		visibleSize: '100%', //前後のスライドを表示するかの設定
-		slideDistance:0,//スライド同士の距離
-		});
-	});
-</script>
-<!-- END: slider-pro -->
-
 <!-- BEGIN: Google Analytics Code -->
 <!-- END: Google Analytics Code -->
 
@@ -70,59 +51,100 @@ $( '#slider-pro' ).sliderPro({
 
 <body>
 
-
-
 <div class="wrap">
 
+<?php include "../help/helpD.html"; ?>
 
-	<div class="mypageTop">
-		<h2 class="mypageH2"><img src="/origimond/images/mypageOrigimond.svg" alt="origimond" width="86" height="67"></h2>
+<?php include "../inc_html/header.inc.html"; ?>
 
-		<h3>オリジモンドへようこそ！</h3>
-
-		<form action="index_submit" method="get" accept-charset="utf-8">
-			<p class="loginInput"><input type="search" name="free" id="search-field" value="" placeholder="メールアドレス" class="input-field"></p>
-			<p class="loginInput"><input type="search" name="free" id="search-field" value="" placeholder="パスワード" class="input-field"></p>
-			<p class="loginBtn"><a href="/origimond/mypage/mypageList.html" title="">ログイン</a></p>
-		</form>
-
-		<h4 class="owasure"><a href="/origimond/mypage/accountPass.html" title="">パスワードをお忘れですか？</a></h4>
-
-		<p class="fbLoginBtn"><a href="/origimond/mypage/accountFB.html" title=""><span><img src="/origimond/images/fbIcon.svg" alt="" width="12" height="12"></span>ログイン</a></p>
-
-		<p class="firstBtn"><a href="/origimond/mypage/accountNew.html" title="">はじめてご利用の方</a></p>
-		<p class="firstArrow"><a href="/origimond/mypage/" title=""><img src="/origimond/images/firstArrow.svg" alt="" width="11" height="6"></a></p>
+	<h2 class="mypageListH2">マイページ<span><a href="/origimond/mypage/mypageAccount.html" title="アカウントページ"><img src="/origimond/images/accountIcon.svg" alt="編集" width="26px" height="26px"></a></span></h2>
 
 
 
-	</div>
+	<!-- TAB CONTROLLERS -->
+	<input id="panel-1-ctrl" class="panel-radios" type="radio" name="tab-radios" checked>
+	<input id="panel-2-ctrl" class="panel-radios" type="radio" name="tab-radios">
+	<input id="panel-3-ctrl" class="panel-radios" type="radio" name="tab-radios">
 
+	<!-- TABS LIST -->
+	<ul id="tabs-list">
+	    <!-- MENU TOGGLE -->
+	    <li id="li-for-panel-1">
+	      <label class="panel-label" for="panel-1-ctrl">&#9829;</label>
+	    </li>
+	    <li id="li-for-panel-2">
+	      <label class="panel-label" for="panel-2-ctrl">閲覧</label>
+	    </li>
+	    <li id="li-for-panel-3">
+	      <label class="panel-label" for="panel-3-ctrl">お問い合わせ</label>
+	    </li>
+	</ul>
 
-	<section class="aboutWrap">
-
-		<h2 class="aboutH2"><img src="/origimond/images/aboutOrigimond.svg" alt="about Origimond" width="108" height="83"></h2>
-		<h3 class="aboutH3">ABOUT</h3>
-		<p class="borderWide"><img src="/origimond/images/aboutBar.svg" alt="" width="15" height="2"></p>
-		<p class="aboutCatch">戸建・マンション・土地など<br>
-		売り物件とあなたをつなぐ情報検索サイト<br>
-		〈 オリジモンド 〉</p>
-		<p class="aboutTxt">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。<br>テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</p>
-
-		<div id="slider-pro" class="slider-pro">
-			<div class="sp-slides">
-				<div class="sp-slide"><img class="sp-image" src="/origimond/images/slide_01.jpg" width="100%" height="100%"></div>
-				<div class="sp-slide"><img class="sp-image" src="/origimond/images/slide_02.jpg" width="100%" height="100%"></div>
-				<div class="sp-slide"><img class="sp-image" src="/origimond/images/slide_03.jpg" width="100%" height="100%"></div>
-				<div class="sp-slide"><img class="sp-image" src="/origimond/images/slide_04.jpg" width="100%" height="100%"></div>
+	<!-- THE PANELS -->
+	<article id="panels">
+	  <div class="container">
+	    <section id="panel-1">
+	      <main>
+			<div class="mypageListArea">
+				<p class="mypageKensuu">お気に入り 123件</p>
+				<p class="mypageListBtns">
+					<a href="/origimond/mypage/mypageListEdit.html" title="" class="mr10">
+						<img src="/origimond/images/mypageListCheck.svg" alt="編集" width="17px" height="17px">
+					</a>
+					<a href="/origimond/mypage/mypageSearch.html" title="">
+						<img src="/origimond/images/listRefine_btn.svg" alt="検索" width="20px" height="17px">
+					</a>
+				</p>
 			</div>
-		</div>
-
-		<p class="accountBtn"><a href="/origimond/mypage/accountNew.html" title="アカウント新規登録">アカウント新規登録</a></p>
-
-	</section><!-- END: .featureWrap -->
-
-<?php include "../inc_html/footer.inc.html"; ?>
+			<div class="mypageListImages">
+				<p class="detailImg"><img src="/origimond/images/mypageListImg.jpg" width="100%" height="100%" alt="お気に入り物件リスト"></p>
+			</div>
+			<div class="mypageListPager">
+				<p class="listPager">1 / 3<span class="listPagerarrow"><a href="" title="">&gt;</a></span></p>
+			</div>
+	      </main>
+	    </section>
+	    <section id="panel-2">
+	      <main>
+			<div class="mypageListArea">
+				<p class="mypageKensuu">最近閲覧した物件</p>
+				<p class="mypageListBtns"><a href="/origimond/mypage/mypageListEdit.html" title="" class="mr10"><img src="/origimond/images/mypageListOkini.svg" alt="編集" width="17px" height="17px"></a> <a href="/origimond/mypage/mypageSearch.html" title=""><img src="/origimond/images/listRefine_btn.svg" alt="検索" width="20px" height="17px"></a></p>
+			</div>
+			<div class="mypageListImages">
+				<p class="detailImg"><img src="/origimond/images/mypageListImg.jpg" width="100%" height="100%" alt="お気に入り物件リスト"></p>
+			</div>
+	      </main>
+	    </section>
+	    <section id="panel-3">
+	      <main>
+			<div class="mypageListArea">
+				<p class="mypageKensuu">問い合わせした物件 123件</p>
+				<p class="mypageListBtns"><a href="/origimond/mypage/mypageSearch.html" title=""><img src="/origimond/images/listRefine_btn.svg" alt="検索" width="20px" height="17px"></a></p>
+			</div>
+			<div class="mypageListImages">
+				<p class="detailImg"><img src="/origimond/images/mypageContactListImg.jpg" width="100%" height="100%" alt="お気に入り物件リスト"></p>
+			</div>
+	      </main>
+	    </section>
+	  </div>
+	</article>
 
 </div>
+<?php include "../inc_html/footer.inc.html"; ?>
+
+<!-- BEGIN: animatedModal -->
+<link rel="stylesheet" href="/origimond/css/animate.min.css">
+<script src="/origimond/js/animatedModal.min.js"></script>
+<script type="text/javascript">
+	$("#modal").animatedModal({
+	        modalTarget:'helpModal',
+	        animatedIn:'bounceInUp',
+	        animatedOut:'bounceOutDown',
+	        color:'#555',
+	        animationDuration: '.6s',
+	        overflow: 'auto'
+	});
+</script>
+
 </body>
 </html>

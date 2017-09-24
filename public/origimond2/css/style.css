@@ -13,7 +13,7 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -119,7 +119,7 @@ html {
 body, button, input, select, textarea {
 	font: 100%/1.5 "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	_font: 100%/1.5 "ＭＳ Ｐゴシック", "MS PGothic", sans-serif; /* Windows XP でメイリオがインストール済みの回避用 (IE6) 用 */
-	*font-size: 1em; 
+	*font-size: 1em;
 	color: #333;
 }
 
@@ -322,7 +322,7 @@ article {
 	margin: 0;
 	padding: 30px;
 /*	height: 100px;*/
-	font-size: 0.8em; 
+	font-size: 0.8em;
 	font-weight: bold;
 	line-height: 25px;
 }
@@ -528,7 +528,7 @@ textarea placeholder{
 
 
 
-/* Top > ABOUT ORIGIMOND 
+/* Top > ABOUT ORIGIMOND
 ---------------------------------------------------------*/
 .aboutWrap {
 	margin: 0;
@@ -549,8 +549,8 @@ textarea placeholder{
 	color: #989898;
 	margin-top: 20px;
 	font-family:din1451alt ;
-	font-size: 0.8em; 
-	letter-spacing: 3px;	
+	font-size: 0.8em;
+	letter-spacing: 3px;
 	font-weight: normal!important;
 }
 
@@ -560,13 +560,13 @@ textarea placeholder{
 
 
 p.aboutCatch{
-	font-size: 1em; 
+	font-size: 1em;
 	padding-bottom: 20px;
 	line-height: 2;
 }
 
 p.aboutTxt{
-	font-size: 0.9em; 
+	font-size: 0.9em;
 	line-height: 2;
 	color: #333!important;
 	text-align: left!important;
@@ -1539,16 +1539,16 @@ p.agentContactTel{
 h3.thankyou{
 	color: #333;
 	font-family:din1451alt ;
-	font-size: 24px; 
-	letter-spacing: 3px;	
+	font-size: 24px;
+	letter-spacing: 3px;
 	font-weight: normal!important;
 }
 
 h3.thankyou2{
 	color: #fff;
 	font-family:din1451alt ;
-	font-size: 24px; 
-	letter-spacing: 3px;	
+	font-size: 24px;
+	letter-spacing: 3px;
 	font-weight: normal!important;
 }
 
@@ -1602,8 +1602,8 @@ section.contactWrap{
 h3.h3Contact{
 	color: #fff;
 	font-family:din1451alt ;
-	font-size: 15px; 
-	letter-spacing: 3px;	
+	font-size: 15px;
+	letter-spacing: 3px;
 	font-weight: normal!important;
 	margin-bottom: 20px;
 }
@@ -1759,8 +1759,8 @@ p.nairanTxt2{
 	display: none; 	/* ラジオボタンを非表示にする */
 }
 .nairanDay label {
-	display: block;		/* ブロックレベル要素化する */ 
-	float: left;		/* 要素の左寄せ・回り込を指定する */ 
+	display: block;		/* ブロックレベル要素化する */
+	float: left;		/* 要素の左寄せ・回り込を指定する */
 	margin: 5px;		/* ボックス外側の余白を指定する */
 	width: 80px;		/* ボックスの横幅を指定する */
 	padding: 5px;	/* ボックス内御右側の余白を指定する */
@@ -1820,14 +1820,14 @@ div.scroll_box {
 
 .mypageTop {
 	color: #fff;
-	background: url(/origimond/images/mypageImg.jpg)no-repeat top; 
+	background: url(/origimond/images/mypageImg.jpg)no-repeat top;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 	margin: 0;
 	padding: 30px;
-	font-size: 0.8em; 
+	font-size: 0.8em;
 	font-weight: bold;
 	line-height: 25px;
 	text-align: center;
@@ -2086,8 +2086,8 @@ p.tourokuBtn a{
 h3.welcome{
 	color: #333;
 	font-family:din1451alt ;
-	font-size: 24px; 
-	letter-spacing: 3px;	
+	font-size: 24px;
+	letter-spacing: 3px;
 	font-weight: normal!important;
 }
 
@@ -2149,7 +2149,7 @@ p.passBtn a{
 
 h3.fbText{
 	color: #969b99;
-	font-size: 12px; 
+	font-size: 12px;
 }
 
 
@@ -3172,7 +3172,7 @@ a.numbers:hover {
 ---------------------------------------------------------*/
 footer {
 	text-align: left;
-	font-size: 1em; 
+	font-size: 1em;
 }
 
 .footerWrap {
@@ -3189,13 +3189,13 @@ footer {
 
 p.footerEng{
 	color: #333;
-	font-size: 0.15em!important; 
+	font-size: 0.15em!important;
 	line-height: 1.5;
 	letter-spacing: 0.2px;
 }
 
 .footerWrap h4{
-	font-size: 0.5em; 
+	font-size: 0.5em;
 	font-weight: bold;
 	margin-top: 30px;
 }
@@ -3205,12 +3205,12 @@ p.footerSearch{
 }
 
 p.footerSearch span{
-	font-size: 0.5em; 
+	font-size: 0.5em;
 }
 
 p.footerSearch a{
 	color: #333;
-	font-size: 0.5em; 
+	font-size: 0.5em;
 	text-decoration: none;
 	vertical-align: middle;
 }
@@ -3247,7 +3247,7 @@ p.footerSearch a{
 small {
 	color: #989898;
 	padding: 15px 30px 10px;
-	font-size: 0.2em!important; 
+	font-size: 0.2em!important;
 	line-height: 1.5;
 	display: block;
 	margin-bottom: 60px;
@@ -3311,7 +3311,7 @@ p.page-top{
 	height: 3px;
 	display: block;
 	position: relative;
-	
+
 }
 
 .popupSearchCloseIcon:before {
@@ -3356,12 +3356,12 @@ p.page-top{
 .popupSearchList li {
 	margin: 0 0 24px;
 	padding: 0;
-	font-weight: normal!important; 
+	font-weight: normal!important;
 }
 
 .popupSearchList li.uridashi{
-	font-size: 10px!important; 
-	font-weight: bold!important; 
+	font-size: 10px!important;
+	font-weight: bold!important;
 }
 
 .popupSearchList li:nth-child(4) {
@@ -3377,7 +3377,7 @@ p.page-top{
 	color: #000;
 	margin: 0;
 	padding: 0;
-	font-size: 12px; 
+	font-size: 12px;
 	display: block;
 	line-height: 1;
 }
@@ -3571,8 +3571,8 @@ select option{
 select::-ms-expand {
   display: none;
 }
-select:-moz-focusring { 
-  color: transparent; 
+select:-moz-focusring {
+  color: transparent;
   text-shadow: 0 0 0 #828c9a;
 }
 
@@ -3589,8 +3589,8 @@ select.selectW{
   color:#fff;
   border-color:#0084B4;
 }
-.select-wrap.select-primary > select:-moz-focusring { 
-  color: transparent; 
+.select-wrap.select-primary > select:-moz-focusring {
+  color: transparent;
   text-shadow: 0 0 0 #fff;
 }
 
@@ -3602,8 +3602,8 @@ select.selectW{
   border-color: #fff;
 }
 
-.select-wrap.select-inverse > select:-moz-focusring { 
-  color: transparent; 
+.select-wrap.select-inverse > select:-moz-focusring {
+  color: transparent;
   text-shadow: 0 0 0 #fff;
 }
 
@@ -3616,10 +3616,10 @@ select.selectW{
 }
 
 /* PU 20170 */
- 
- p span.demoSpan1{height:20px; width:20px; display:block; position:relative;float: right;margin-top: 5px;margin-right: 15px;} 
 
- p span.demoSpan2{height:20px; width:20px; display:block; position:relative;float: right;margin-top: -10px;margin-right: 0px;} 
+ p span.demoSpan1{height:20px; width:20px; display:block; position:relative;float: right;margin-top: 5px;margin-right: 15px;}
+
+ p span.demoSpan2{height:20px; width:20px; display:block; position:relative;float: right;margin-top: -10px;margin-right: 0px;}
 
 .demoSpan2:before, .demoSpan2:after,
 .demoSpan1:before, .demoSpan1:after{content:''; height:4px; width:20px; display:block; background:#cccccc; border-radius:4px;-webkit-border-radius:4px;-moz-border-radius:4px; position:absolute; top:16px; left:0px; transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);-ms-transform:rotate(-45deg);}
@@ -3936,5 +3936,6 @@ p.helpCredit{
 	font-size: 8px;
 }
 
-
-
+.text-warning {
+	color: #fe0;
+}

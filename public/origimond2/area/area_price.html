@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 
@@ -60,16 +54,16 @@ function submitFreeword(){
 <?php include "../help/helpB.html"; ?>
 
 <?php include "../inc_html/header.inc.html"; ?>
-			
+
 	<section class="areaSearchWrap areaSearchWrap2">
-		
+
 		<p class="mapArea"><a href="/origimond/detail/" title=""><img src="/origimond/images/area_02.jpg" alt="現在地周辺を探す" width="100%" height="100%"></a></p>
 
 		<ul class="iconBtns2">
 			<li><a href="/origimond/list/" title=""><img src="/origimond/images/list_btn.svg" alt="リスト" width="40px" height="40px"></a></li>
 			<li><a href="/origimond/area/area_search.html" title=""><img src="/origimond/images/refine_btn.svg" alt="絞り込み検索" width="40px" height="40px"></a></li>
 		</ul>
-	
+
 	</section><!-- END: .featureWrap -->
 
 </div>
@@ -90,4 +84,3 @@ function submitFreeword(){
 
 </body>
 </html>
-

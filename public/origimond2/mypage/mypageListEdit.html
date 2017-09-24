@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 

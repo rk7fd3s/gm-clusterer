@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 
@@ -60,8 +54,8 @@ function submitFreeword(){
 <?php include "../help/helpC.html"; ?>
 
 <?php include "../inc_html/header.inc.html"; ?>
-					
-	<section class="contactWrap textCenter"><!-- CONTACT -->	
+
+	<section class="contactWrap textCenter"><!-- CONTACT -->
 
 		<div class="thankyouArea">
 			<h3 class="thankyou2">THANK YOU!</h3>

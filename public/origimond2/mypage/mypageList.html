@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 
@@ -94,7 +88,7 @@ function submitFreeword(){
 				<p class="mypageListBtns">
 					<a href="/origimond/mypage/mypageListEdit.html" title="" class="mr10">
 						<img src="/origimond/images/mypageListCheck.svg" alt="編集" width="17px" height="17px">
-					</a> 
+					</a>
 					<a href="/origimond/mypage/mypageSearch.html" title="">
 						<img src="/origimond/images/listRefine_btn.svg" alt="検索" width="20px" height="17px">
 					</a>

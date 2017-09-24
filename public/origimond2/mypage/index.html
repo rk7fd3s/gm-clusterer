@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 
@@ -102,17 +96,17 @@ $( '#slider-pro' ).sliderPro({
 
 
 	</div>
-		
-	
+
+
 	<section class="aboutWrap">
-		
+
 		<h2 class="aboutH2"><img src="/origimond/images/aboutOrigimond.svg" alt="about Origimond" width="108" height="83"></h2>
 		<h3 class="aboutH3">ABOUT</h3>
 		<p class="borderWide"><img src="/origimond/images/aboutBar.svg" alt="" width="15" height="2"></p>
 		<p class="aboutCatch">戸建・マンション・土地など<br>
 		売り物件とあなたをつなぐ情報検索サイト<br>
-		〈 オリジモンド 〉</p>		
-		<p class="aboutTxt">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。<br>テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</p>		
+		〈 オリジモンド 〉</p>
+		<p class="aboutTxt">テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。<br>テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。</p>
 
 		<div id="slider-pro" class="slider-pro">
 			<div class="sp-slides">
@@ -132,7 +126,3 @@ $( '#slider-pro' ).sliderPro({
 </div>
 </body>
 </html>
-
-
-
-

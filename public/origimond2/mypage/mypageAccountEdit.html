@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 
@@ -65,7 +59,7 @@ function submitFreeword(){
 
 		<h3 class="accountTitle">アカウント情報</h3>
 
-		<section class="accountWrap mt30" id=""><!-- アカウントの編集 -->	
+		<section class="accountWrap mt30" id=""><!-- アカウントの編集 -->
 			<form action="index_submit" method="get" accept-charset="utf-8">
 				<p class="accountInput"><input type="search" name="free" id="search-field" value="" placeholder="田中" class="input-fieldHalf"></p>
 				<p class="accountInput"><input type="search" name="free" id="search-field" value="" placeholder="太郎" class="input-fieldHalfR"></p>
@@ -92,7 +86,7 @@ function submitFreeword(){
 				<li>お気に入り物件の情報配信<span class="yomu"><img src="/origimond/images/yomuBtn.svg" alt="" width="15" height="15"> 購読する</span></li>
 			</ul>
 
-		<section class="accountWrap mt30" id=""><!-- アカウントの編集 -->	
+		<section class="accountWrap mt30" id=""><!-- アカウントの編集 -->
 			<div class="accountBtnArea">
 				<p class="tourokuBtn"><a href="/origimond/mypage/mypageAccount.html" title="">変更する</a></p>
 			</div>

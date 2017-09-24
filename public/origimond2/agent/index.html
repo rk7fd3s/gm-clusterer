@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 
@@ -73,7 +67,7 @@ function submitFreeword(){
 
 <script>
 	$(function() {
-	    var topMenu = $('.footBtnArea2');    
+	    var topMenu = $('.footBtnArea2');
 	    topMenu.hide();
 	    $(this).scroll(function () {
 	        if ($(this).scrollTop() > 160) {
@@ -94,17 +88,17 @@ function submitFreeword(){
 <?php include "../help/helpC.html"; ?>
 
 <?php include "../inc_html/header.inc.html"; ?>
-					
+
 
 	<section class="agentWrap">
-		
+
 		<p class="agentImg"><img src="/origimond/images/agentImg01.png" alt="エージェント画像" width="120px" height="120px"></p>
 
 		<ul class="agentList">
 			<li class="agentName">新垣 結衣</li>
 			<li class="agentKana">あらがき ゆい</li>
 			<li class="agentCom">（株）福岡ABCD 不動産</li>
-		</ul>	
+		</ul>
 
 	</section>
 
@@ -138,7 +132,7 @@ function submitFreeword(){
 
 	</section>
 
-	<section class="agentWrap"><!-- オススメ -->	
+	<section class="agentWrap"><!-- オススメ -->
 
 		<table class="agentTable" width="100%">
 			<thead>
@@ -150,24 +144,24 @@ function submitFreeword(){
 				<tr>
 					<th><img src="/origimond/images/osusumeImg01.jpg" alt="" width="75" height="50"></th>
 					<td>
-						グランドカーサ大名<br>	
-						福岡市中央区大名1<br>	
+						グランドカーサ大名<br>
+						福岡市中央区大名1<br>
 						¥39,450,000
 					</td>
 				</tr>
 				<tr>
 					<th><img src="/origimond/images/osusumeImg02.jpg" alt="" width="75" height="50"></th>
 					<td>
-						パークマンション薬院<br>	
-						福岡市中央区薬院2<br>	
+						パークマンション薬院<br>
+						福岡市中央区薬院2<br>
 						¥43,400,000
 					</td>
 				</tr>
 				<tr>
 					<th><img src="/origimond/images/osusumeImg03.jpg" alt="" width="75" height="50"></th>
 					<td>
-						アーバンメゾン大濠<br>	
-						福岡市中央区大濠2<br>	
+						アーバンメゾン大濠<br>
+						福岡市中央区大濠2<br>
 						¥48,870,000
 					</td>
 				</tr>
@@ -185,24 +179,24 @@ function submitFreeword(){
 				<tr>
 					<th><img src="/origimond/images/osusumeImg04.jpg" alt="" width="75" height="50"></th>
 					<td>
-						メゾンド舞鶴<br>	
-						福岡市中央区大名1<br>	
+						メゾンド舞鶴<br>
+						福岡市中央区大名1<br>
 						¥30,250,000
 					</td>
 				</tr>
 				<tr>
 					<th><img src="/origimond/images/osusumeImg05.jpg" alt="" width="75" height="50"></th>
 					<td>
-						エクスペリテ薬院<br>	
-						福岡市中央区薬院2<br>	
+						エクスペリテ薬院<br>
+						福岡市中央区薬院2<br>
 						¥29,800,000
 					</td>
 				</tr>
 				<tr>
 					<th><img src="/origimond/images/osusumeImg06.jpg" alt="" width="75" height="50"></th>
 					<td>
-						アーバンパレス大濠<br>	
-						福岡市中央区大濠2<br>	
+						アーバンパレス大濠<br>
+						福岡市中央区大濠2<br>
 						¥32,220,000
 					</td>
 				</tr>
@@ -299,12 +293,12 @@ function submitFreeword(){
 			<p class="moreBtn2"><a href="" title="">MORE<span><img src="/origimond/images/arrowDown.svg" alt="" width="9" height="5"></span></a></p>
 		</div>
 		<div class="agentPaging"><!-- 静的ページング -->
-			<p class="paging"><span>1</span>  2  3  4  5 ... 10 NEXT</p>			
+			<p class="paging"><span>1</span>  2  3  4  5 ... 10 NEXT</p>
 		</div>
 
 	</article>
 
-	<section class="agentWrap" id="agentHyoka"><!-- AGENTを評価する -->	
+	<section class="agentWrap" id="agentHyoka"><!-- AGENTを評価する -->
 		<h3 class="agentValue">このエージェントを評価する</h3>
 
 		<table class="agentValueTable">
@@ -323,7 +317,7 @@ function submitFreeword(){
 					<td class="tdStar">☆ ☆ ☆ ☆ ☆</td>
 				</tr>
 			</tbody>
-		</table>		
+		</table>
 
 		<form action="index_submit" method="get" accept-charset="utf-8">
 			<p class="agentValueInput"><input type="search" name="free" id="search-field" value="" placeholder="タイトル" class="input-field"></p>
@@ -353,7 +347,7 @@ function submitFreeword(){
 	</section><!-- END: AGENTを評価する -->
 
 
-	<section class="agentContactWrap" id="contact"><!-- AGENTに問い合わせする -->	
+	<section class="agentContactWrap" id="contact"><!-- AGENTに問い合わせする -->
 		<div class="agentContactArea">
 			<h3 class="agentContactTl">CONTACT</h3>
 			<h4 class="agentContactTxt">お気軽にお問い合わせください</h4>
@@ -404,7 +398,7 @@ function submitFreeword(){
 	$(function(){
 	  var state = false;
 	  var scrollpos;
-	 
+
 	  $('#modal').on('click', function(){
 	    if(state == false) {
 	      scrollpos = $(window).scrollTop();
@@ -418,7 +412,7 @@ function submitFreeword(){
 	      state = false;
 	    }
 	  });
-	 
+
 	});
 </script>
 

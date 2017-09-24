@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 
@@ -73,7 +67,7 @@ function submitFreeword(){
 
 <script>
 	$(function() {
-	    var topMenu = $('.footBtnArea');    
+	    var topMenu = $('.footBtnArea');
 	    topMenu.hide();
 	    $(this).scroll(function () {
 	        if ($(this).scrollTop() > 160) {
@@ -95,13 +89,13 @@ function submitFreeword(){
 <?php include "../help/helpC.html"; ?>
 
 <?php include "../inc_html/header.inc.html"; ?>
-					
+
 	<div class="shiboriTitleArea">
 		<p class="taglinePra">物件を絞り込む<span class="demoSpan2"><a href="/origimond/list/" title=""></a></span></p>
 
 	</div>
 
-	<section class="searchlWrap"><!-- INFO -->	
+	<section class="searchlWrap"><!-- INFO -->
 		<form action="index_submit" method="get" accept-charset="utf-8">
 		<table class="infoTable" width="100%">
 			<tbody>
@@ -112,12 +106,12 @@ function submitFreeword(){
 								<option value="">下限なし</option>
 								<option value="">0000</option>
 								<option value="">0000</option>
-							</select> 〜 
+							</select> 〜
 							<select name="" id="">
 								<option value="">上限なし</option>
 								<option value="">0000</option>
 								<option value="">0000</option>
-							</select>	
+							</select>
 						</div>
 
 						<div class="radio02">
@@ -174,12 +168,12 @@ function submitFreeword(){
 								<option value="">下限なし</option>
 								<option value="">0000</option>
 								<option value="">0000</option>
-							</select> 〜 
+							</select> 〜
 							<select name="" id="">
 								<option value="">上限なし</option>
 								<option value="">0000</option>
 								<option value="">0000</option>
-							</select>					
+							</select>
 						</div>
 					</td>
 				</tr>
@@ -190,12 +184,12 @@ function submitFreeword(){
 								<option value="">下限なし</option>
 								<option value="">0000</option>
 								<option value="">0000</option>
-							</select> 〜 
+							</select> 〜
 							<select name="" id="">
 								<option value="">上限なし</option>
 								<option value="">0000</option>
 								<option value="">0000</option>
-							</select>					
+							</select>
 						</div>
 					</td>
 				</tr>
@@ -821,4 +815,3 @@ function submitFreeword(){
 
 </body>
 </html>
-

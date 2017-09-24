@@ -39,33 +39,27 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 <script type="text/javascript" src="/origimond/js/iscroll.js"></script>
 <script>
 	$(document).ready(function () {
-	 
+
 	    var element = $(".scroll_x")[0];
-	 
+
 	    var scroll_x = new iScroll(element, {
-	 
+
 	        // スクロールバーを常時表示
 	        hideScrollbar: false,
-	 
+
 	        // 慣性スクロール禁止
 	        bounce: false,
-	 
+
 	        // スクロール領域からの画面全体の縦スクロールを有効に
 	        onBeforeScrollStart: function(){}
-	 
+
 	    });
-	 
+
 	});
 </script>
 <!-- BEGIN: Google Analytics Code -->
@@ -80,21 +74,21 @@ function submitFreeword(){
 <?php include "../help/helpC.html"; ?>
 
 <?php include "../inc_html/header.inc.html"; ?>
-					
+
 	<p class="imgArea"><img src="/origimond/images/listImg_01.jpg" alt="リスト画像01" width="100%" height="100%"></p>
 
 	<section class="detailWrap">
-		
+
 		<ul class="detailList">
 			<li class="listPrice">¥39,450,000</li>
 			<li class="listTitle">グランドカーサ大名</li>
 			<li>80.12㎡ │ 築5年 │ 福岡市中央区大名1</li>
 			<li>西鉄天神大牟田線「福岡（天神）駅」歩10分</li>
-		</ul>	
+		</ul>
 
 	</section>
 	<section class="agentNairanSelect">
-		
+
 		<p class="nairanTxt">内覧を希望する日時を選択してください</p>
 
 		<div class="nairanDay scroll_box scroll_x">
@@ -157,4 +151,3 @@ function submitFreeword(){
 
 </body>
 </html>
-

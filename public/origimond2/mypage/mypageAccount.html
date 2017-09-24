@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 
@@ -73,7 +67,7 @@ function submitFreeword(){
 				<li class="mt20">tarotanaka@ybb.ne.jp</li>
 				<li>090-1234-5678</li>
 				<li>住所未登録</li>
-			</ul>	
+			</ul>
 			<p class="accountCaution">＊パスワードはセキュリティのため非表示</p>
 		</section>
 

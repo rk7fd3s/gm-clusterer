@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 
@@ -73,7 +67,7 @@ function submitFreeword(){
 
 <script>
 	$(function() {
-	    var topMenu = $('.footBtnArea2');    
+	    var topMenu = $('.footBtnArea2');
 	    topMenu.hide();
 	    $(this).scroll(function () {
 	        if ($(this).scrollTop() > 160) {
@@ -94,19 +88,19 @@ function submitFreeword(){
 <?php include "../help/helpC.html"; ?>
 
 <?php include "../inc_html/header.inc.html"; ?>
-					
+
 
 	<p class="imgArea"><img src="/origimond/images/detailImg_01.jpg" alt="詳細画像01" width="100%" height="100%"></p>
 
 	<section class="detailWrap"><!-- 物件概要 -->
-		
+
 
 		<ul class="detailList">
 			<li class="listPrice">¥39,450,000<span class="listPriceIcon"><img src="/origimond/images/tatemono_on.svg" alt="" width="25" height="25"></span></li>
 			<li class="listTitle">グランドカーサ大名</li>
 			<li>80.12㎡ │ 築5年 │ 福岡市中央区大名1</li>
 			<li>西鉄天神大牟田線「福岡（天神）駅」歩10分</li>
-		</ul>	
+		</ul>
 
 		<p class="detailComment">物件コメント物件コメント物件コメント物件コメント物件コメント物件コメント物件コメント物件コメント物件コメント物件コメント物件コメント物件コメント。	</p>
 
@@ -121,15 +115,15 @@ function submitFreeword(){
 
 	</section><!-- END: 物件概要 -->
 
-	<div class="googleMapArea">				
+	<div class="googleMapArea">
 		<p class="imgArea"><img src="/origimond/images/detailMap.jpg" alt="グーグルマップ" width="100%" height="100%"></p>
-	</div>			
+	</div>
 
-	<div class="streetViewArea">				
+	<div class="streetViewArea">
 		<p class="imgArea"><img src="/origimond/images/detailStreet.jpg" alt="ストリートビュー" width="100%" height="100%"></p>
-	</div>			
+	</div>
 
-	<section class="detailWrap"><!-- INFO -->	
+	<section class="detailWrap"><!-- INFO -->
 
 		<table class="infoTable" width="100%">
 			<thead>
@@ -268,7 +262,7 @@ function submitFreeword(){
 
 	</article>
 
-	<section class="detailWrap"><!-- SPEC -->	
+	<section class="detailWrap"><!-- SPEC -->
 
 		<table class="pickupTable" width="100%">
 			<thead>
@@ -353,9 +347,9 @@ function submitFreeword(){
 	<div class="detailListArea"><!-- IMAGE -->
 		<h3>あなたにオススメの物件</h3>
 	</div>
-			
+
 	<section class="listWrap"><!-- 1物件 -->
-		
+
 		<p class="imgArea"><a href="/origimond/detail/" title=""><img src="/origimond/images/listImg_03.jpg" alt="リスト画像03" width="100%" height="100%"></a></p>
 
 		<ul class="listTexts">
@@ -363,12 +357,12 @@ function submitFreeword(){
 				<li class="listTitle">ロイヤルパレス大名</li>
 				<li>100.89&#13217; │ 新築 │ 福岡市中央区大名2</li>
 				<li>西鉄天神大牟田線「福岡（天神）駅」歩12分</li>
-		</ul>	
+		</ul>
 
 	</section><!-- END: .listWrap -->
 
 	<section class="listWrap"><!-- 1物件 -->
-		
+
 		<p class="imgArea"><a href="/origimond/detail/" title=""><img src="/origimond/images/listImg_04.jpg" alt="リスト画像04" width="100%" height="100%"></a></p>
 
 		<ul class="listTexts">
@@ -376,12 +370,12 @@ function submitFreeword(){
 				<li class="listTitle">パークマンション薬院</li>
 				<li>110.02&#13217; │ 築5 年 │ 福岡市中央区薬院2</li>
 				<li>西鉄天神大牟田線「薬院駅」歩15分</li>
-		</ul>	
+		</ul>
 
 	</section><!-- END: .listWrap -->
 
 	<section class="listWrap"><!-- 1物件 -->
-		
+
 		<p class="imgArea"><a href="/origimond/detail/" title=""><img src="/origimond/images/listImg_05.jpg" alt="リスト画像05" width="100%" height="100%"></a></p>
 
 		<ul class="listTexts">
@@ -389,7 +383,7 @@ function submitFreeword(){
 				<li class="listTitle">アーバンメゾン大濠</li>
 				<li>99.89&#13217; │ 新築 │ 福岡市中央区大濠2</li>
 				<li>地下鉄空港線「大濠公園」歩10分</li>
-		</ul>	
+		</ul>
 
 	</section><!-- END: .listWrap -->
 
@@ -422,7 +416,7 @@ function submitFreeword(){
 	$(function(){
 	  var state = false;
 	  var scrollpos;
-	 
+
 	  $('#modal').on('click', function(){
 	    if(state == false) {
 	      scrollpos = $(window).scrollTop();
@@ -436,7 +430,7 @@ function submitFreeword(){
 	      state = false;
 	    }
 	  });
-	 
+
 	});
 </script>
 

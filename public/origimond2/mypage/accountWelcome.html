@@ -39,12 +39,6 @@ $( function() {
 		$('.popupSearchWrap').toggle(500, 'easeOutExpo'); // or easeOutCubic, easeOutQuart, easeOutQuint
 	});
 });
-function submitFreeword(){
-	if(window.event.keyCode==13){
-		document.fFreeword.action = "<?= SITE_PATH ?>/list/";
-		document.fFreeword.submit();
-	}
-}
 </script>
 <!-- END: Popup Search -->
 
@@ -59,7 +53,7 @@ function submitFreeword(){
 
 <div class="wrap">
 
-	<section class="accountWrap" id=""><!-- アカウント新規登録 -->	
+	<section class="accountWrap" id=""><!-- アカウント新規登録 -->
 
 		<div class="accountArea">
 			<h3 class="welcome">WELCOME!</h3>
@@ -71,7 +65,7 @@ function submitFreeword(){
 	</section>
 
 
-	<section class="accountWrap mt20" id=""><!-- アカウント新規登録 -->	
+	<section class="accountWrap mt20" id=""><!-- アカウント新規登録 -->
 			<p class="accountLoginBtn"><a href="/origimond/mypage/mypageList.html" title="">ログイン</a></p>
 		</div>
 	</section>
@@ -80,11 +74,7 @@ function submitFreeword(){
 
 	<footer>
 		<small class="textCenter">Copyright &copy; ORIGIMOND Daiko Sangyo Co., ltd.</small>
-	</footer>	
+	</footer>
 
 </body>
 </html>
-
-
-
-

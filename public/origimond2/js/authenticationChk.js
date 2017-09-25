@@ -1,5 +1,15 @@
+var basepath = "/origimond/";
+var site_config = {
+  basepath: basepath,
+  signupPath: basepath + "mypage/signup.html",
+  loginPath: basepath + "mypage/login.html",
+  logoutPath: basepath + "mypage/logout.html",
+  loginRedirect: basepath + "mypage/",
+  logoutRedirect: basepath
+};
+
 //Firebase初期設定
-var config = {
+var fb_config = {
   apiKey: "AIzaSyBNpikVcthtQX-C9mOBxDsvMcuoDLD_0dQ",
   authDomain: "gm-clusterer.firebaseapp.com",
   databaseURL: "https://gm-clusterer.firebaseio.com",
@@ -7,23 +17,54 @@ var config = {
   storageBucket: "gm-clusterer.appspot.com",
   messagingSenderId: "841745518490"
 };
-firebase.initializeApp(config);
+firebase.initializeApp(fb_config);
 
-//認証状態の確認
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    console.log($(location).attr('pathname'));
-    console.log('logined');
-  } else {
-    var curPath = $(location).attr('pathname');
+var authchk = $('head').attr('authchk') || false;
+console.log("authchk:" + authchk);
+var curPath = $(location).attr('pathname');
+console.log("curPath:" + curPath);
 
-    if (!curPath.match(/mypage\/logout.html/)) {
-      $(location).attr('href', '/origimond/mypage/login.html');
+if (authchk) {
+  var signOut = false;
+  //認証状態の確認
+  var unsubscribe = firebase.auth().onAuthStateChanged(function(user) {
+    console.log(user);
+    if (user) {
+      // ログイン済み
+      // ログインリンクをログアウトリンクに変更
+      $(function() {
+        $('.linkLogin').text('ログアウト');
+        $('.linkLogin').on('click', function(e) {
+          e.preventDefault();
+          firebase.auth().signOut();
+
+          signOut = true;
+          location.replace(site_config.logoutRedirect);
+        });
+      });
+
+      var userId = user.uid;
+      return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+        var userDate = snapshot.val();
+        if (userDate === null) {
+          // ユーザデータの登録がない
+          // TODO
+        }
+      });
+
+    } else {
+      if (!signOut) {
+      // 未ログイン
+        location.replace(site_config.loginPath);
+      }
     }
-  }
-});
-
-function loginDisplay() {
-  console.log($(location).attr('pathname'));
-  console.log('logined');
+  });
+} else if (curPath === site_config.signupPath
+        || curPath === site_config.loginPath) {
+  var unsubscribe = firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      location.replace(site_config.loginRedirect);
+      return;
+    }
+  });
 }

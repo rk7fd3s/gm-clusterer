@@ -1,18 +1,7 @@
-
 $( function() {
-  //Firebase初期設定
-  var config = {
-    apiKey: "AIzaSyBNpikVcthtQX-C9mOBxDsvMcuoDLD_0dQ",
-    authDomain: "gm-clusterer.firebaseapp.com",
-    databaseURL: "https://gm-clusterer.firebaseio.com",
-    projectId: "gm-clusterer",
-    storageBucket: "gm-clusterer.appspot.com",
-    messagingSenderId: "841745518490"
-  };
-  firebase.initializeApp(config);
-
   //ログイン処理
   $('#btnLogin').on('click', function(e) {
+    e.preventDefault();
     $('.loginErrorMsg').hide();
 
     var email = $('#l_email').val();
@@ -30,11 +19,26 @@ $( function() {
     $('.loginErrorMsg').show();
   };
 
-  //認証状態の確認
-  firebase.auth().onAuthStateChanged(function(user) {
-    if(user) {
-      $(location).attr('href', '/origimond/mypage/');
-    }
+  // FBログイン
+  $('#btnFbLogin').on('click', function(e) {
+    e.preventDefault();
+
+    var provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
   });
 
+
+  //新規登録処理
+  $('.tourokuBtn a').on('click', function(e) {
+    e.preventDefault();
+
+    var email = $('#l_email').val();
+    var password = $('#l_password').val();
+
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .catch(function(error) {
+      console.log(error);
+      alert('登録できません（' + error.message + '）');
+    });
+  });
 });

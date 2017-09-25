@@ -10,6 +10,8 @@
 
 <link rel="stylesheet" href="/origimond/css/style.css">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+<script src="/origimond/js/authenticationChk.js?_=<?php echo(time()); ?>"></script>
 
 <!-- BEGIN: OGP -->
 <meta property="og:title" content="">
@@ -91,7 +93,7 @@ $( '#slider-pro' ).sliderPro({
 
 		<h4 class="owasure"><a href="/origimond/mypage/accountPass.html" title="">パスワードをお忘れですか？</a></h4>
 
-		<p class="fbLoginBtn"><a href="/origimond/mypage/accountFB.html" title=""><span><img src="/origimond/images/fbIcon.svg" alt="" width="12" height="12"></span>ログイン</a></p>
+		<p class="fbLoginBtn"><a href="/origimond/mypage/accountFB.html" id="btnFbLogin" title=""><span><img src="/origimond/images/fbIcon.svg" alt="" width="12" height="12"></span>ログイン</a></p>
 
 		<p class="firstBtn"><a href="/origimond/mypage/accountNew.html" title="">はじめてご利用の方</a></p>
 		<p class="firstArrow"><a href="/origimond/mypage/" title=""><img src="/origimond/images/firstArrow.svg" alt="" width="11" height="6"></a></p>
@@ -124,8 +126,7 @@ $( '#slider-pro' ).sliderPro({
 
 	</section><!-- END: .featureWrap -->
 	<?php include "../inc_html/footer.inc.html"; ?>
-	<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
-	<script src="/origimond/js/authenticationLgin.js"></script>
+	<script src="/origimond/js/authenticationLgin.js?_=<?php echo(time()); ?>"></script>
 
 </div>
 </body>

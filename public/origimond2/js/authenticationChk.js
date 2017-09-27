@@ -3,6 +3,7 @@ var site_config = {
   basepath: basepath,
   signupPath: basepath + "mypage/signup.html",
   loginPath: basepath + "mypage/login.html",
+  loginFBPath: basepath + "mypage/loginFB.html",
   logoutPath: basepath + "mypage/logout.html",
   loginRedirect: basepath + "mypage/",
   logoutRedirect: basepath

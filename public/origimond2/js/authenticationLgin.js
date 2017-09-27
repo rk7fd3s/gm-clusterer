@@ -23,8 +23,8 @@ $( function() {
   $('#btnFbLogin').on('click', function(e) {
     e.preventDefault();
 
-    var provider = new firebase.auth.FacebookAuthProvider();
-    firebase.auth().signInWithRedirect(provider);
+    // 専用ページに遷移
+    location.href = site_config.loginFBPath;
   });
 
 

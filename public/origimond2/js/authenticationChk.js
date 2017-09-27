@@ -6,6 +6,7 @@ var site_config = {
   loginFBPath: basepath + "mypage/loginFB.html",
   logoutPath: basepath + "mypage/logout.html",
   loginRedirect: basepath + "mypage/",
+  loginWelcome: basepath + "mypage/accountWelcome.html",
   logoutRedirect: basepath
 };
 
@@ -32,26 +33,33 @@ if (authchk) {
     console.log(user);
     if (user) {
       // ログイン済み
-      // ログインリンクをログアウトリンクに変更
-      $(function() {
-        $('.linkLogin').text('ログアウト');
-        $('.linkLogin').on('click', function(e) {
-          e.preventDefault();
-          firebase.auth().signOut();
+      if (!user.emailVerified) {
+        // メアド認証済みでない場合メール送信
+        user.sendEmailVerification();
+      } else {
+        // メアド認証済み
+        // ログインリンクをログアウトリンクに変更
+        $(function() {
+          $('.linkLogin').text('ログアウト');
+          $('.linkLogin').on('click', function(e) {
+            e.preventDefault();
+            firebase.auth().signOut();
 
-          signOut = true;
-          location.replace(site_config.logoutRedirect);
+            signOut = true;
+            location.replace(site_config.logoutRedirect);
+          });
         });
-      });
 
-      var userId = user.uid;
-      return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-        var userDate = snapshot.val();
-        if (userDate === null) {
-          // ユーザデータの登録がない
-          // TODO
-        }
-      });
+        var userId = user.uid;
+        return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+          var userData = snapshot.val();
+          console.log(userData);
+          if (userData === null) {
+            // ユーザデータの登録がない
+            // TODO
+          }
+        });
+      }
 
     } else {
       if (!signOut) {
@@ -64,7 +72,20 @@ if (authchk) {
         || curPath === site_config.loginPath) {
   var unsubscribe = firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
-      location.replace(site_config.loginRedirect);
+      console.log(user);
+      if (!user.emailVerified) {
+        // メアド認証済みでない場合メール送信
+        user.sendEmailVerification().then(function() {
+          console.log('send');
+        }, function(error) {
+          console.log(error);
+        });;
+        //
+        location.replace(site_config.loginWelcome);
+      } else {
+        // メアド認証済み
+        location.replace(site_config.loginRedirect);
+      }
       return;
     }
   });

@@ -79,7 +79,10 @@ if (authchk) {
           console.log('send');
         }, function(error) {
           console.log(error);
-        });;
+        });
+
+        // ログアウトさせる
+        firebase.auth().signOut();
         //
         location.replace(site_config.loginWelcome);
       } else {

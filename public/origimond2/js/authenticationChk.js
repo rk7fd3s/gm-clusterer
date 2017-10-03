@@ -50,6 +50,12 @@ if (authchk) {
           });
         });
 
+        firebase.auth().currentUser.getIdToken(true).then(function(idToken) {
+          console.log(idToken);
+        }).catch(function(error) {
+          // Handle error
+        });
+
         var userId = user.uid;
         return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
           var userData = snapshot.val();
